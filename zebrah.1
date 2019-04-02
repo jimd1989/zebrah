@@ -1,0 +1,36 @@
+.Dd $Mdocdate$
+.Dt zebrah 1
+.Os
+.Sh NAME
+.Nm zebrah
+.Nd zebrah/einstein puzzle generator
+.Sh SYNOPSIS
+.Nm zebrah 
+.Op -option file ...
+.Sh DESCRIPTION
+.Pp
+zebrah takes a completed puzzle state and generates a minimal list of constraints, so that others may solve the puzzle. Input can be loaded from an external file containing a lisp style two-dimensional list such as:
+.Pp
+((yellow blue red ivory green)
+ (norway ukraine england spain japan)
+ (water tea milk orange-juice coffee)
+ (kool chesterfield old-gold lucky-strike parliament)
+ (foxes horses snails dogs zebras))
+.Pp
+or generated interactively through a series of prompts. The constraints are printed to stdout.
+.Bl -tag -width Ds
+.It Fl v
+Verbose mode. Will show what the program is doing at any given time. This might be useful for larger puzzles, if only to reassure the user that it's still working.
+.El
+.Bl -tag -width Ds
+.It Fl i
+Interactive mode. Allows the user to specify the puzzle's fields one at a time through prompts. No file argument is required.
+.El
+.Bl -tag -width Ds
+.It Fl h
+Prints the help message.
+.El
+.Sh AUTHORS
+Written by Jim Dalrymple. https://dalrym.pl
+.Sh CAVEATS
+At the moment zebrah does not check for unbalanced puzzle grids or duplicate field names. Provide sensible input if you expect sensible output.
